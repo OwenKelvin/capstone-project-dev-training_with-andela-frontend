@@ -2,7 +2,7 @@
 
 Teamwork is an internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.
 
-[![Build Status](https://travis-ci.com/OwenKelvin/capstone-project-dev-training_with-andela-frontend.svg?branch=develop)](https://travis-ci.com/OwenKelvin/capstone-project-dev-training_with-andela-frontend)
+[![Build Status](https://travis-ci.com/OwenKelvin/capstone-project-dev-training_with-andela-frontend.svg?branch=develop)](https://travis-ci.com/OwenKelvin/capstone-project-dev-training_with-andela-frontend) [![Coverage Status](https://coveralls.io/repos/github/OwenKelvin/capstone-project-dev-training_with-andela-frontend/badge.svg?branch=ch-add-coveralls-%23169722236)](https://coveralls.io/github/OwenKelvin/capstone-project-dev-training_with-andela-frontend?branch=ch-add-coveralls-%23169722236)
 
 ## Technologies
 
