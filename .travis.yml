@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "12.6.0"
+script:
+  npm test -- --coverage
+  npm run build
+  npm run serve
+after_script: # Upload coverage reports 
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
