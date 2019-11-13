@@ -60,17 +60,29 @@ const handleInstallingWorker = (registration: any, config: any) => {
     return;
   }
   installingWorker.onstatechange = () => {
-    if (installingWorker.state === 'installed') {
-      if (navigator.serviceWorker.controller) {
-        if (config && config.onUpdate) {
-          config.onUpdate(registration);
-        }
-      } else {
-        if (config && config.onSuccess) {
-          config.onSuccess(registration);
-        }
-      }
+    if (installingWorker.state === 'installed' &&
+      navigator.serviceWorker.controller &&
+      config &&
+      config.onUpdate) {
+      config.onUpdate(registration);
     }
+    if (installingWorker.state === 'installed' &&
+      !navigator.serviceWorker.controller &&
+      config &&
+      config.onSuccess) {
+      config.onSuccess(registration);
+    }
+    // if (installingWorker.state === 'installed') {
+    //   if (navigator.serviceWorker.controller) {
+    //     if (config && config.onUpdate) {
+    //       config.onUpdate(registration);
+    //     }
+    //   } else {
+    //     if (config && config.onSuccess) {
+    //       config.onSuccess(registration);
+    //     }
+    //   }
+    // }
   };
 };
 
