@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM, { unmountComponentAtNode, render } from 'react-dom';
 import App from './App';
 import { act } from 'react-dom/test-utils';
+import { register } from './serviceWorker';
 
 describe('APP: ', () => {
   let container: any = null;
@@ -26,5 +27,49 @@ describe('APP: ', () => {
       render(<App />, container);
     });
     expect(container.textContent).toContain('Login');
+  });
+  describe('Service Worker', () => {
+    let config;
+    let buildFail = false;
+    beforeEach(() => {
+      buildFail = false;
+    })
+    it('renders when config is null', () => {
+      config = null;
+      try {
+        register(config);
+      } catch (error) {
+        buildFail = true;
+      }
+      expect(buildFail).toBe(false);
+     });
+    it('renders when config is empty', () => {
+      let config = {};
+      try {
+        register(config);
+      } catch (error) {
+        buildFail = true;
+      }
+      expect(buildFail).toBe(false);
+     });
+    it('renders when config is has an onUpdate function', () => {
+      let config = { onUpdate: () => { } };
+      try {
+        register(config);
+      } catch (error) {
+        buildFail = true;
+      }
+      expect(buildFail).toBe(false);
+     });
+    it('renders when config is has an onSuccess function', () => {
+      let config = { onSuccess: () => { } };
+      try {
+        register(config);
+      } catch (error) {
+        buildFail = true;
+      }
+      expect(buildFail).toBe(false);
+     });
+    
   });
 });
