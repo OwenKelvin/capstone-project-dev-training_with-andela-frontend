@@ -9,7 +9,7 @@ script:
   - npm test -- --coverage
   - npm run build
   - npm run serve
-  - bundle exec rspec
+
 after_script: # Upload coverage reports 
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
