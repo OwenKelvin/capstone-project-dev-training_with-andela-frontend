@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM, { unmountComponentAtNode, render } from 'react-dom';
 import App from './App';
-import { act } from "react-dom/test-utils";
+import { act } from 'react-dom/test-utils';
 
 describe('APP: ', () => {
   let container: any = null;
   beforeEach(() => {
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
   });
 
@@ -25,6 +25,6 @@ describe('APP: ', () => {
     act(() => {
       render(<App />, container);
     });
-    expect(container.textContent).toContain("Login");
+    expect(container.textContent).toContain('Login');
   });
 });
