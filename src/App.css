@@ -5,24 +5,3 @@
   min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header,
-.App-body {
-  /* background-color: rgb(48, 48, 48); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-header {
-  padding-top: 10%;
-}
-
-.App-link {
-  color: #09d3ac;
-}
