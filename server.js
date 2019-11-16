@@ -1,13 +1,12 @@
-const express = require("express");
-const path = require("path");
+import express, { static } from 'express';
+import { join } from 'path';
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(static(join(__dirname, 'build')));
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(process.env.PORT || 4000 );
-
-console.log('Server Running...');
+app.listen(process.env.PORT || 4000);

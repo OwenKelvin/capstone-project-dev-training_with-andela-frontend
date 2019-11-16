@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "engines": {
     "node": ">=12.6.0",
-    "npm": ">=6.11.3"
+    "npm": ">=6.11.3",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "private": true,
   "dependencies": {
@@ -12,12 +13,14 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "latest",
+    "@types/react-router-dom": "^5.1.2",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
@@ -49,6 +52,18 @@
     ]
   },
   "devDependencies": {
-    "coveralls": "^3.0.7"
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.19.1"
   }
 }
