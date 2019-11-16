@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM, { unmountComponentAtNode, render } from 'react-dom';
 import App from './App';
 import { act } from 'react-dom/test-utils';
-import { register } from './serviceWorker';
+import { register } from '../serviceWorker';
 
 describe('APP: ', () => {
   let container: any = null;

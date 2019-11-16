@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.component.css';
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 

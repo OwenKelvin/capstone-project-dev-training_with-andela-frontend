@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.component.css';
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
 import { Button } from 'react-bootstrap';
 
 const LoginComponent = () => {
