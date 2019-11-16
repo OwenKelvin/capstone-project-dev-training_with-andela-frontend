@@ -12,8 +12,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
   - npm install coveralls -g
-  - nyc npm test && nyc report --reporter=text-lcov | coveralls
-  
+  - nyc npm test && nyc report --temp-directory=coverage --reporter=text-lcov | coveralls
 script:
   - npm test -- --coverage
   - npm run build
