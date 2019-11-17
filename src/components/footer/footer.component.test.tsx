@@ -3,17 +3,6 @@ import FooterComponent from './footer.component';
 import React from 'react';
 
 describe('FOOTER COMPONENT: ', () => {
-    let container: any = null;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-    });
-    afterEach(() => {
-        // cleanup on exiting
-        unmountComponentAtNode(container);
-        container.remove();
-        container = null;
-    });
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<FooterComponent />, div);
