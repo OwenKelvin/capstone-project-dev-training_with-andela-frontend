@@ -5,6 +5,6 @@ describe('LOGIN_ACTION: ', () => {
         expect(loginAction).toBeInstanceOf(Function);
         loginAction(({ type }: { type: string }) => {
             expect(type).toBeDefined();
-        })
+        });
     });
-})
+});

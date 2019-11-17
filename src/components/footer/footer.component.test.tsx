@@ -2,7 +2,7 @@ import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import FooterComponent from './footer.component';
 import React from 'react';
 
-describe('LOGIN: ', () => {
+describe('FOOTER COMPONENT: ', () => {
     let container: any = null;
     beforeEach(() => {
         container = document.createElement('div');

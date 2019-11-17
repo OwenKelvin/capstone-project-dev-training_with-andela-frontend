@@ -4,7 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './store';
-import Root from './Root'
+import Root from './Root';
 
 ReactDOM.render(<Root store={configureStore()} />, 
   document.getElementById('root'));
