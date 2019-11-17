@@ -2,7 +2,7 @@ import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import LoginComponent from './login.component';
 import React from 'react';
 
-describe('HOME COMPONENT: ', () => {
+describe('LOGIN COMPONENT: ', () => {
     let container: any = null;
     beforeEach(() => {
         container = document.createElement('div');
