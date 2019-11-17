@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.component.css';
 import logo from '../../images/logo.png';
 import { ButtonToolbar } from 'react-bootstrap';
-import { BrowserRouter as Router, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
   render() {
