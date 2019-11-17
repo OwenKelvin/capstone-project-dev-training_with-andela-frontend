@@ -1,0 +1,24 @@
+h1 {
+    color: rgb(233, 177, 177);
+    font-size: 1.5em;
+    padding: 0.5em;
+    line-height: 1.5em}
+.card-heading, .card-body {
+    background: rgb(102, 102, 102);
+}
+
+.form-group {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+img {
+    margin-top: 20%;
+}
+.card-heading img {
+    height: 1em;
+    margin-top: 0;
+}
+.label {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
