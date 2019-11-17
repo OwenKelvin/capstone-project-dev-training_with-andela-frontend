@@ -8,15 +8,15 @@ class App extends Component {
   render() {
     return (
       <section>
-        <header className="App-header">
-          <img alt="Logo" src={logo} />
+        <header className='App-header'>
+          <img alt='Logo' src={logo} />
         </header>
-        <div className="App-body">
+        <div className='App-body'>
           Welcome to TeamWork
         <ButtonToolbar>
             <Router>
-              <a href="/login">
-                <button type="button" className="btn btn-outline-primary">Login</button>
+              <a href='/login'>
+                <button type='button' className='btn btn-outline-primary'>Login</button>
               </a>
             </Router>
 
@@ -24,7 +24,7 @@ class App extends Component {
         </div>
       </section>
     );
-  };
+  }
 };
 
 export default App;

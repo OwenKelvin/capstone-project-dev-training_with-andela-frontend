@@ -52,17 +52,15 @@ describe('APP: ', () => {
       }
       expect(buildFail).toBe(false);
      });
-    it('renders when config is has an onUpdate function', () => {
-      let config = { onUpdate: () => { } };
+    it('renders when config is has an onUpdate | onSuccess function', () => {
+      let config: object = { onUpdate: () => { } };
       try {
         register(config);
       } catch (error) {
         buildFail = true;
       }
+      config = { onSuccess: () => { } };
       expect(buildFail).toBe(false);
-     });
-    it('renders when config is has an onSuccess function', () => {
-      let config = { onSuccess: () => { } };
       try {
         register(config);
       } catch (error) {

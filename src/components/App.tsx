@@ -6,10 +6,10 @@ import LoginComponent from './login/login.component';
 
 const App = () => {
   return (
-    <main className="App">
+    <main className='App'>
       <Router>
-        <Route exact path="/" component={HomeComponent} />
-        <Route exact path="/login" component={LoginComponent} />
+        <Route exact path='/' component={HomeComponent} />
+        <Route exact path='/login' component={LoginComponent} />
       </Router>
     </main>
   );

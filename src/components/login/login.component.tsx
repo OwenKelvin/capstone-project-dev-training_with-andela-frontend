@@ -5,9 +5,9 @@ import { Button } from 'react-bootstrap';
 
 const LoginComponent = () => {
     return (
-        <main className="App">
-            <section className="col-lg-4">
-                <img alt="Logo" src={logo} />
+        <main className='App'>
+            <section className='col-lg-4'>
+                <img alt='Logo' src={logo} />
                 LOGIN PAGE
                 <Button>Login</Button>
             </section>
