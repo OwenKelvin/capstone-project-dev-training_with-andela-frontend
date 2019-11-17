@@ -53,7 +53,7 @@ describe('APP: ', () => {
      });
     it('renders when config is has an onUpdate | onSuccess function', () => {
       try {
-        register({ onUpdate: () => { return;} });
+        register({ onUpdate: () => { return; } });
       } catch (error) {
         buildFail = true;
       }
