@@ -6,4 +6,4 @@ describe('LOGIN_ACTION: ', () => {
         expect(loginReducer).toBeInstanceOf(Function);
         expect(loginReducer({}, LOGIN_SUCCESS_ACTION)).toBeDefined();
     });
-})
+});

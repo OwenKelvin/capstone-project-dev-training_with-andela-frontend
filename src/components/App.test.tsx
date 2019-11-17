@@ -33,7 +33,7 @@ describe('APP: ', () => {
     let buildFail = false;
     beforeEach(() => {
       buildFail = false;
-    })
+    });
     it('renders when config is null', () => {
       config = null;
       try {
@@ -44,25 +44,22 @@ describe('APP: ', () => {
       expect(buildFail).toBe(false);
      });
     it('renders when config is empty', () => {
-      let config = {};
       try {
-        register(config);
+        register({});
       } catch (error) {
         buildFail = true;
       }
       expect(buildFail).toBe(false);
      });
     it('renders when config is has an onUpdate | onSuccess function', () => {
-      let config: object = { onUpdate: () => { } };
       try {
-        register(config);
+        register({ onUpdate: () => { return;} });
       } catch (error) {
         buildFail = true;
       }
-      config = { onSuccess: () => { } };
       expect(buildFail).toBe(false);
       try {
-        register(config);
+        register({ onSuccess: () => { return; } });
       } catch (error) {
         buildFail = true;
       }

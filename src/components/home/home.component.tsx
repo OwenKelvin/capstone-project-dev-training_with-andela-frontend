@@ -25,6 +25,6 @@ class App extends Component {
       </section>
     );
   }
-};
+}
 
 export default App;
