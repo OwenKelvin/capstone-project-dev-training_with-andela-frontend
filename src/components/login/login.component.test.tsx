@@ -21,6 +21,6 @@ describe('HOME COMPONENT: ', () => {
     });
     
     it.skip('renders button with text "login"', () => {
-   
+        // Check if button exists
     });
 });
