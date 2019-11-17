@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 
 const Root = ({ store }: {store: any}): any => (
