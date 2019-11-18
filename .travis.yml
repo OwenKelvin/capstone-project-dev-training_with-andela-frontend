@@ -4,6 +4,8 @@ env:
 language: node_js
 node_js:
   - "12.6.0"
+env:
+  - NODE_ENV="test"
 
 before_script:
   - npm install
