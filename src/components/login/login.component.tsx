@@ -33,8 +33,7 @@ class LoginComponent extends Component<{}, IState> {
     const password = this.state.password;
     AuthService.authenticate({ email, password }).then((res) => {
       if (res.data && res.data.token) {
-        console.log(res.data)
-        localStorage.setItem('user', res.data);
+        localStorage.setItem('user', JSON.stringify(res.data));
         this.setState({ toDashboard: true })
       } else {
         this.setState({ loginError: 'Invalid Username or Password' });
@@ -81,7 +80,6 @@ class LoginComponent extends Component<{}, IState> {
                     {this.state.loginError}
                   </section>
                 )}
-
               </section>
             </form>
           </section>

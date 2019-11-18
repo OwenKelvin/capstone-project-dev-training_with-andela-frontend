@@ -6,6 +6,12 @@ export interface ICredentials {
   password: string
 }
 const AuthService = {
+  getToken():string {
+    if (localStorage.getItem('user')) {
+      return JSON.parse(localStorage.getItem('user') as string).token;
+    }
+    return '';
+  },
   async authenticate(data = {}) {
     const url = `${apiLink}/auth/signin`;
     const response = await fetch(url, {
