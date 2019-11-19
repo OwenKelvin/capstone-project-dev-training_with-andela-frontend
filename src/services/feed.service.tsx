@@ -8,7 +8,6 @@ export interface ICredentials {
 }
 const FeedService = {
   async getAllFeeds() {
-    console.log(AuthService.getToken());
     const url = `${apiLink}/feed`;
     const response = await fetch(url, {
       method: 'GET',
