@@ -3,12 +3,14 @@ import './dashboard.component.css';
 import FooterComponent from '../footer/footer.component';
 import HeaderComponent from '../header/header.component';
 import FeedService from '../../services/feed.service';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
-class DashboardComponent extends Component {
+class DashboardComponent extends Component<{}, {feeds: any[], error: any}> {
   constructor(props: any) {
     super(props);
     this.state = {
-      feeds: []
+      feeds: [],
+      error: null
     };
   }
   componentDidMount() {
@@ -16,16 +18,30 @@ class DashboardComponent extends Component {
   }
   getFeeds() {
     FeedService.getAllFeeds().then((res) => {
-      this.setState({ feeds: res });
-      console.log(res);
-    }).catch();
+      this.setState({ feeds: res.data });
+    }).catch((err) => {
+      this.setState({ error: err })
+    });
   }
   render() {
     return (
       <section>
         <HeaderComponent />
-        Body
-            <FooterComponent />
+        <Router>
+          <section className='container-fluid'>
+            <Link to='/create' className="btn btn-primary">new</Link>
+            {this.state.feeds.map((value, index) => {
+              return (<article >
+                <section className='card'>
+                  {JSON.stringify(value)}
+                  <h1 className='card-heading'>{value.title}</h1>
+                  <section className='card-footer'><Link to={value.articleId ? `/view/article/${value.articleId}` : `/view/gif/${value.gifId}`} className='btn btn-primary'>more...</Link></section>
+                </section>
+              </article>)
+            })}
+          </section>
+          <FooterComponent />
+        </Router>
       </section>
     );
   }

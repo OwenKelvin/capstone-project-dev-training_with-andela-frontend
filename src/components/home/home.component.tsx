@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 import './home.component.css';
 import logo from '../../images/logo.png';
 import { ButtonToolbar } from 'react-bootstrap';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LoginComponent from '../login/login.component';
 
-class App extends Component {
+class App extends Component<{}, { viewLogin: boolean }> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      viewLogin: false
+    };
+    this.handleGoLogin = this.handleGoLogin.bind(this);
+  }
+  handleGoLogin() {
+    this.setState({ viewLogin: true });
+  }
   render() {
+    if (this.state.viewLogin) {
+      return (<LoginComponent />);
+    }
     return (
       <section>
         <header className='App-header'>
@@ -15,11 +29,11 @@ class App extends Component {
           Welcome to TeamWork
         <ButtonToolbar>
             <Router>
-              <a href='/login'>
-                <button type='button' className='btn btn-outline-primary'>Login</button>
-              </a>
+              <Link to='/login'>
+                <button onClick={this.handleGoLogin} type='button' className='btn btn-outline-primary'>
+                  Login</button>
+              </Link>
             </Router>
-
           </ButtonToolbar>
         </div>
       </section>

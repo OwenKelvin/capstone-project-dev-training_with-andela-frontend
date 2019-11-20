@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import HomeComponent from './home/home.component';
 import LoginComponent from './login/login.component';
 import DashboardComponent from './dashboard/dashboard.component';
+import ViewArticleComponent from './view-article/view-article.component';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route exact path='/' component={HomeComponent} />
         <Route exact path='/login' component={LoginComponent} />
         <Route exact path='/dashboard' component={DashboardComponent} />
+        <Route exact path='/view/article/:articleId' component={ViewArticleComponent} />
       </Router>
     </main>
   );
