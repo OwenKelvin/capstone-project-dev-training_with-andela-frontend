@@ -6,7 +6,7 @@ import AuthService from './auth.service';
 describe('AUTH SERVICE: ', () => {
   describe('function authenticate', () => {
     let successResponse: string;
-    let errorResponse: any;
+    let errorResponse: any = {};
     beforeAll((done) => {
       const validCredentials = { email: 'admin@admin.com', password: 'password' };
       AuthService.authenticate(validCredentials).then((res) => {
