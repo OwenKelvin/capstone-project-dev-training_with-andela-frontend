@@ -52,7 +52,7 @@ export const register = (config: any) => {
       }
     });
   }
-}
+};
 
 const handleInstallingWorker = (registration: any, config: any) => {
   const installingWorker = registration.installing;
@@ -97,7 +97,7 @@ const registerValidSW = (swUrl: any, config: any) => {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
-}
+};
 
 const checkValidServiceWorker = (swUrl: any, config: any) => {
   // Check if the service worker can be found. If it can't reload the page.
@@ -125,7 +125,7 @@ const checkValidServiceWorker = (swUrl: any, config: any) => {
         'No internet connection found. App is running in offline mode.'
       );
     });
-}
+};
 
 export const unregister = () => {
   if ('serviceWorker' in navigator) {
@@ -133,4 +133,4 @@ export const unregister = () => {
       registration.unregister();
     });
   }
-}
+};

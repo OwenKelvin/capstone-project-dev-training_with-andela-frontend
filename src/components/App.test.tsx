@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM, { unmountComponentAtNode, render } from 'react-dom';
 import App from './App';
 import { act } from 'react-dom/test-utils';
-import { register } from './serviceWorker';
+import { register } from '../serviceWorker';
 
 describe('APP: ', () => {
   let container: any = null;
@@ -33,7 +33,7 @@ describe('APP: ', () => {
     let buildFail = false;
     beforeEach(() => {
       buildFail = false;
-    })
+    });
     it('renders when config is null', () => {
       config = null;
       try {
@@ -44,27 +44,22 @@ describe('APP: ', () => {
       expect(buildFail).toBe(false);
      });
     it('renders when config is empty', () => {
-      let config = {};
       try {
-        register(config);
+        register({});
       } catch (error) {
         buildFail = true;
       }
       expect(buildFail).toBe(false);
      });
-    it('renders when config is has an onUpdate function', () => {
-      let config = { onUpdate: () => { } };
+    it('renders when config is has an onUpdate | onSuccess function', () => {
       try {
-        register(config);
+        register({ onUpdate: () => { return; } });
       } catch (error) {
         buildFail = true;
       }
       expect(buildFail).toBe(false);
-     });
-    it('renders when config is has an onSuccess function', () => {
-      let config = { onSuccess: () => { } };
       try {
-        register(config);
+        register({ onSuccess: () => { return; } });
       } catch (error) {
         buildFail = true;
       }
