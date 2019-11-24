@@ -19,7 +19,7 @@ describe('AUTH SERVICE: ', () => {
     beforeAll((done) => {
       AuthService.authenticate({ email: 'admin@admin.com', password: 'invalidPassword' }).then((err) => {
         errorResponse = err;
-      }).finally(() => done());
+      }).catch(() => { }).finally(() => done());
     });
     it('should return an object with a token', () => {
       expect(successResponse).toBeDefined();
