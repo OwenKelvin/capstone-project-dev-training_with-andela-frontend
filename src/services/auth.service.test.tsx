@@ -25,5 +25,15 @@ describe('AUTH SERVICE: ', () => {
       expect(errorResponse.status).toBe('fail');
     });
   });
-
+  describe('fuction authenticatedUser', () => {
+    let isPromise = false;
+    beforeAll((done) => {
+      AuthService.loggedInUser().catch(() => {
+        isPromise = true;
+      }).finally(() => done());
+    })
+    it('should return a promise', () => {
+      expect(isPromise).toBeTruthy();
+    });
+  });
 });

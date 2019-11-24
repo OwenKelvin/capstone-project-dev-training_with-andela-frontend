@@ -3,9 +3,15 @@ import DashboardComponent from './dashboard.component';
 import React from 'react';
 
 describe('HOME COMPONENT: ', () => {
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<DashboardComponent />, div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
+  let div: HTMLElement;
+  beforeAll(() => {
+    div = document.createElement('div');
+  })
+  it('renders without crashing', done => {
+    ReactDOM.render(<DashboardComponent />, div);
+    done();
+  });
+  afterAll(() => {
+    // ReactDOM.unmountComponentAtNode(div);
+  });
 });

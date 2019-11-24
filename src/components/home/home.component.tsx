@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.component.css';
 import logo from '../../images/logo.png';
 import { ButtonToolbar } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import LoginComponent from '../login/login.component';
 
 class App extends Component<{}, { viewLogin: boolean }> {

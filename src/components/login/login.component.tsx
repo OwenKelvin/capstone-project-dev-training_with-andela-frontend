@@ -32,11 +32,13 @@ class LoginComponent extends Component<{}, IState> {
     const email = this.state.username;
     const password = this.state.password;
     AuthService.authenticate({ email, password }).then((res) => {
-      if (res.data && res.data.token) {
-        localStorage.setItem('user', JSON.stringify(res.data));
-        this.setState({ toDashboard: true })
-      } else {
-        this.setState({ loginError: 'Invalid Username or Password' });
+      if (window) {
+        if (res.data && res.data.token) {
+          localStorage.setItem('user', JSON.stringify(res.data));
+          this.setState({ toDashboard: true })
+        } else {
+          this.setState({ loginError: 'Invalid Username or Password' });
+        }
       }
 
     });
