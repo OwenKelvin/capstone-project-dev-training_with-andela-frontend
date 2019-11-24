@@ -4,6 +4,7 @@
 import AuthService from './auth.service';
 
 describe('AUTH SERVICE: ', () => {
+  // TODO user: mock http 
   describe('function authenticate', () => {
     let successResponse: string;
     let errorResponse: any = {};
@@ -11,12 +12,14 @@ describe('AUTH SERVICE: ', () => {
       const validCredentials = { email: 'admin@admin.com', password: 'password' };
       AuthService.authenticate(validCredentials).then((res) => {
         successResponse = res.data.token;
+      }).catch(() => {
+        console.log('Error occured');
       }).finally(() => done());
     });
     beforeAll((done) => {
       AuthService.authenticate({ email: 'admin@admin.com', password: 'invalidPassword' }).then((err) => {
         errorResponse = err;
-      }).finally(() => done());
+      }).catch(() => { }).finally(() => done());
     });
     it('should return an object with a token', () => {
       expect(successResponse).toBeDefined();

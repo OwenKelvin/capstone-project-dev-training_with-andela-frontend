@@ -9,7 +9,7 @@ describe('FEED SERVICE: ', () => {
     beforeAll((done) => {
       FeedService.getAllFeeds().then((res) => {
         successResponse = res.data;
-      }).finally(() => done());
+      }).catch(() => { }).finally(() => done());
     });
     it('should return an array ', () => {
       expect(successResponse && successResponse.length).toBeTruthy;

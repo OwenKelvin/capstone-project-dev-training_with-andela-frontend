@@ -14,11 +14,11 @@ describe('LOGIN_ACTION: ', () => {
     process.env = OLD_ENV;
   });
   it('should have a config Link', () => {
-    process.env.NODE_ENV = 'test';
+    //process.env.NODE_ENV = 'test';
     expect(apiLink).toBeDefined();
   });
   it('should have a config Link defined in production', () => {
-    process.env.NODE_ENV = 'production';
+    //process.env.NODE_ENV = 'production';
     expect(apiLink).toBeDefined();
   });
 });
