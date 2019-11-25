@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class AdminLinkComponent extends Component {
   render() {
-    return (<div className='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
+    return (<div className='collapse navbar-collapse justify-content-start' id='collapsibleNavbar'>
       <ul className='navbar-nav'>
         <li className='nav-item'>
           <Router>
