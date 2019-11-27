@@ -25,7 +25,7 @@ class ArticleBody extends Component<
     return (<section>{this.state.article}</section>);
   }
 }
-class DashboardComponent extends Component<{}, { feeds: any[], error: any, page?: 'create-article' | 'create-gif'| 'view' | undefined }> {
+class DashboardComponent extends Component<{store: any}, { feeds: any[], error: any, page?: 'create-article' | 'create-gif'| 'view' | undefined }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -54,18 +54,18 @@ class DashboardComponent extends Component<{}, { feeds: any[], error: any, page?
   render() {
     
     if (this.state.page === 'create-gif') {
-      return (<CreateGifComponent />);
+      return (<CreateGifComponent store={this.props.store}/>);
     }
     if (this.state.page === 'create-article') {
-      return (<CreateArticleComponent />);
+      return (<CreateArticleComponent store={this.props.store}/>);
     }
     return (
       <section>
-        <HeaderComponent />
+        <HeaderComponent store={this.props.store} />
         <Router>
           <section className='container-fluid header-component'>
             <NavLink onClick={this.handleLinkToArticle} to='/create/article' className="btn btn-primary btn-sm">New Article</NavLink>
-            <NavLink to='/create/gif' className="btn btn-primary btn-sm">New Gif</NavLink>
+            &nbsp;<NavLink onClick={this.handleLinkToGif} to='/create/gif' className="btn btn-primary btn-sm">New Gif</NavLink>
             <section className='d-flex flex-wrap'>
               {this.state.feeds.map((value, index) => {
                 return (<article key={index} className='col-md-6'>

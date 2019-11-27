@@ -4,6 +4,7 @@ import logo from '../../images/logo.png';
 import { ButtonToolbar } from 'react-bootstrap';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import LoginComponent from '../login/login.component';
+import { connect } from 'react-redux';
 
 class App extends Component<{}, { viewLogin: boolean }> {
   constructor(props: any) {
@@ -39,6 +40,18 @@ class App extends Component<{}, { viewLogin: boolean }> {
       </section>
     );
   }
+  componentDidUpdate(prevProps: any) {
+    // console.log(prevProps)
+    // if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
+    //   const { dispatch, selectedSubreddit } = this.props
+    //   dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    // }
+  }
 }
 
-export default App;
+
+const mapStateToProps = (state: any) => {
+  return { };
+}
+
+export default connect(mapStateToProps)(App)

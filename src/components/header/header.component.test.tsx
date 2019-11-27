@@ -5,7 +5,7 @@ import React from 'react';
 describe('HEADER COMPONENT: ', () => {
     it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<HeaderComponent />, div);
+        ReactDOM.render(<HeaderComponent store />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 });
