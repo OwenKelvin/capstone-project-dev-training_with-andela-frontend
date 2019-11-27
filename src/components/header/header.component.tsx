@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './header.component.css';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import AdminLinkComponent from '../admin-link/admin-link.component';
 import AuthService from '../../services/auth.service';
@@ -36,6 +36,11 @@ class HeaderComponent extends Component<{}, { user: IUser }> {
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
               <span className='navbar-toggler-icon'></span>
             </button>
+            <ul className='navbar-nav'>
+              <li className='nav-item'>
+                <Link className='nav-link' to='/dashboard'>Home</Link>
+              </li>
+            </ul>
             {this.state.user.isAdmin ? <AdminLinkComponent /> : ''}
             <section className='justify-content-start'>you are logged is as {this.state.user.email} <button className='btn btn-sm btn-danger'> Logout</button></section>
           </nav>

@@ -3,7 +3,9 @@ import './dashboard.component.css';
 import FooterComponent from '../footer/footer.component';
 import HeaderComponent from '../header/header.component';
 import FeedService from '../../services/feed.service';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
+import CreateGifComponent from '../create-gif/create-gif.component';
+import CreateArticleComponent from '../create-article/create-article.component';
 
 class ArticleBody extends Component<
   { url: string | undefined | null, article: string | undefined | null },
@@ -23,13 +25,15 @@ class ArticleBody extends Component<
     return (<section>{this.state.article}</section>);
   }
 }
-class DashboardComponent extends Component<{}, { feeds: any[], error: any }> {
+class DashboardComponent extends Component<{}, { feeds: any[], error: any, page?: 'create-article' | 'create-gif'| 'view' | undefined }> {
   constructor(props: any) {
     super(props);
     this.state = {
       feeds: [],
-      error: null
+      error: null,
     };
+    this.handleLinkToArticle = this.handleLinkToArticle.bind(this);
+    this.handleLinkToGif = this.handleLinkToGif.bind(this);
   }
   componentDidMount() {
     this.getFeeds();
@@ -41,25 +45,41 @@ class DashboardComponent extends Component<{}, { feeds: any[], error: any }> {
       this.setState({ error: err })
     });
   }
+  handleLinkToGif(): void {
+    this.setState({ page: 'create-gif'})
+  }
+  handleLinkToArticle(): void {
+    this.setState({ page: 'create-article'})
+  }
   render() {
+    
+    if (this.state.page === 'create-gif') {
+      return (<CreateGifComponent />);
+    }
+    if (this.state.page === 'create-article') {
+      return (<CreateArticleComponent />);
+    }
     return (
       <section>
         <HeaderComponent />
         <Router>
           <section className='container-fluid header-component'>
-            <Link to='/create' className="btn btn-primary">new</Link>
-            {this.state.feeds.map((value, index) => {
-              return (<article >
-                <section className='card'>
-                  <h1 className='card-heading'>{value.title}</h1>
-                  <section className="card-body">
-                    <ArticleBody article={value.article} url={value.url} />
-                    <section className='card-footer'>
-                      <Link to={value.articleId ? `/view/article/${value.articleId}` : `/view/gif/${value.gifId}`} className='btn btn-sm btn-primary'>more...</Link></section>
+            <NavLink onClick={this.handleLinkToArticle} to='/create/article' className="btn btn-primary btn-sm">New Article</NavLink>
+            <NavLink to='/create/gif' className="btn btn-primary btn-sm">New Gif</NavLink>
+            <section className='d-flex flex-wrap'>
+              {this.state.feeds.map((value, index) => {
+                return (<article key={index} className='col-md-6'>
+                  <section className='card'>
+                    <h1 className='card-heading'>{value.title}</h1>
+                    <section className="card-body">
+                      <ArticleBody article={value.article} url={value.url} />
+                      <section className='card-footer'>
+                        <Link to={value.articleId ? `/view/article/${value.articleId}` : `/view/gif/${value.gifId}`} className='btn btn-sm btn-primary'>more...</Link></section>
+                    </section>
                   </section>
-                </section>
-              </article>)
-            })}
+                </article>)
+              })}
+            </section>
           </section>
           <FooterComponent />
         </Router>
