@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom';
-import HeaderComponent from './header.component';
+import CreateArticleComponent from './create-article.component';
 import React from 'react';
 
-describe('HEADER COMPONENT: ', () => {
+describe('CREATE ARTICLE COMPONENT: ', () => {
     it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<HeaderComponent store />, div);
+        ReactDOM.render(<CreateArticleComponent store />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 });

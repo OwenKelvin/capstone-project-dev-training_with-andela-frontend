@@ -7,7 +7,7 @@ import App from './components/App';
 const Root = ({ store }: {store: any}): any => (
   <Provider store={store}>
     <Router>
-      <Route path='/:filter?' component={App} />
+      <Route path='/:param1?/:param2?/:param3?' component={App} />
     </Router>
   </Provider>
 );

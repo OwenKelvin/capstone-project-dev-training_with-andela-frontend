@@ -13,7 +13,7 @@ describe('AUTH SERVICE: ', () => {
       AuthService.authenticate(validCredentials).then((res) => {
         successResponse = res.data.token;
       }).catch(() => {
-        console.log('Error occured');
+        // console.log('Error occured');
       }).finally(() => done());
     });
     beforeAll((done) => {

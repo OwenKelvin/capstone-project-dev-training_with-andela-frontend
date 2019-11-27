@@ -37,7 +37,7 @@ const AuthService = {
       cache: 'no-cache',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${AuthService.getToken}`
+        'Authorization': `Bearer ${AuthService.getToken()}`
       },
       referrer: 'no-referrer',
     });
