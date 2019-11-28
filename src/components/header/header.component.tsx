@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './header.component.css';
-import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import AdminLinkComponent from '../admin-link/admin-link.component';
 import AuthService from '../../services/auth.service';
@@ -11,7 +11,8 @@ interface IUser {
   email?: string
 };
 
-class HeaderComponent extends Component<{store: any}, { user: IUser }> {
+class HeaderComponent extends Component<{ store: any }, { user: IUser }> {
+  _isMounted = false;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -19,8 +20,11 @@ class HeaderComponent extends Component<{store: any}, { user: IUser }> {
     };
   }
   componentDidMount() {
+    this._isMounted = true;
     AuthService.loggedInUser().then((res) => {
-      this.setState({ user: res.data });
+      if (this._isMounted) {
+        this.setState({ user: res.data });
+      }
     }).catch(() => { })
   }
   render() {
@@ -55,6 +59,9 @@ class HeaderComponent extends Component<{store: any}, { user: IUser }> {
     //   const { dispatch, selectedSubreddit } = this.props
     //   dispatch(fetchPostsIfNeeded(selectedSubreddit))
     // }
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 };
 

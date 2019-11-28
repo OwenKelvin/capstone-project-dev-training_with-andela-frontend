@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import LoginComponent from '../login/login.component';
 import { connect } from 'react-redux';
 
-class App extends Component<{}, { viewLogin: boolean }> {
+class HomeComponent extends Component<{}, { viewLogin: boolean }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -54,4 +54,4 @@ const mapStateToProps = (state: any) => {
   return { };
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(HomeComponent)
