@@ -9,7 +9,7 @@ const store = mockStore({});
 describe('HOME COMPONENT: ', () => {
     it('renders without crashing', (done) => {
         const div = document.createElement('div');
-        ReactDOM.render(<Provider store={store}><HomeComponent store={store} /></Provider>, div);
+        ReactDOM.render(<Provider store={store}><HomeComponent /></Provider>, div);
         ReactDOM.unmountComponentAtNode(div);
         done();
     });
