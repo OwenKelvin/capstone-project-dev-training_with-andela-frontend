@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class AdminLinkComponent extends Component<{store: any}, {}> {

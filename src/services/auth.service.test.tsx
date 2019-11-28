@@ -31,7 +31,11 @@ describe('AUTH SERVICE: ', () => {
   describe('fuction authenticatedUser', () => {
     let isPromise = false;
     beforeAll((done) => {
-      AuthService.loggedInUser().catch(() => {
+      AuthService.loggedInUser()
+        .then(() => {
+          isPromise = true;
+        })
+        .catch(() => {
         isPromise = true;
       }).finally(() => done());
     })

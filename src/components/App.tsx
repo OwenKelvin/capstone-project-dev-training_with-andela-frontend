@@ -8,7 +8,7 @@ import ViewArticleComponent from './view-article/view-article.component';
 import CreateArticleComponent from './create-article/create-article.component';
 import CreateGifComponent from './create-gif/create-gif.component';
 
-class App extends Component<{ store:any, match: any }, {}> {
+class App extends Component<{ store:any, match?: any }, {}> {
   render() {
     return (
       <main className='App'>
