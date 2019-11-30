@@ -6,6 +6,7 @@ node_js:
   - "12.6.0"
 env:
   - NODE_ENV="test"
+  - BACKEND_URL="https://capstone-project-teamwork.herokuapp.com/api/v1"
 
 before_script:
   - npm install
@@ -15,9 +16,9 @@ before_script:
   - ./cc-test-reporter before-build
   
 script:
-#  - npm test -- --coverage
+  - npm test -- --coverage
   - npm run build
-#  - npm run coveralls
+  - npm run coveralls
 
 after_script:
  - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
